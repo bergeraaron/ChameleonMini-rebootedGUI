@@ -45,6 +45,7 @@ namespace ChameleonMiniGUI
             this.lbl_interval = new System.Windows.Forms.Label();
             this.chk_keepalive = new System.Windows.Forms.CheckBox();
             this.gb_connectionSettings = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pb_device = new System.Windows.Forms.PictureBox();
             this.tb_firmware = new System.Windows.Forms.TextBox();
             this.txt_constatus = new System.Windows.Forms.TextBox();
@@ -196,6 +197,8 @@ namespace ChameleonMiniGUI
             this.btn_open1 = new System.Windows.Forms.Button();
             this.hexBox2 = new Be.Windows.Forms.HexBox();
             this.hexBox1 = new Be.Windows.Forms.HexBox();
+            this.tpUtils = new System.Windows.Forms.TabPage();
+            this.ucExplorer1 = new ChameleonMiniGUI.UcExplorer();
             this.tpSerial = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.gbSerial_interface = new System.Windows.Forms.GroupBox();
@@ -210,11 +213,8 @@ namespace ChameleonMiniGUI
             this.tbSerialHelp = new System.Windows.Forms.TextBox();
             this.linkRevG = new System.Windows.Forms.LinkLabel();
             this.linkRevE = new System.Windows.Forms.LinkLabel();
-            this.tpUtils = new System.Windows.Forms.TabPage();
-            this.ucExplorer1 = new ChameleonMiniGUI.UcExplorer();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-            this.label1 = new System.Windows.Forms.Label();
             this.gb_output.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsLanguages)).BeginInit();
             this.tpSettings.SuspendLayout();
@@ -239,12 +239,12 @@ namespace ChameleonMiniGUI
             this.tpDump.SuspendLayout();
             this.menuScroll.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsTemplates)).BeginInit();
+            this.tpUtils.SuspendLayout();
             this.tpSerial.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.gbSerial_interface.SuspendLayout();
             this.menuClear.SuspendLayout();
             this.gbAvailableCmds.SuspendLayout();
-            this.tpUtils.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_output
@@ -385,6 +385,15 @@ namespace ChameleonMiniGUI
             this.gb_connectionSettings.TabIndex = 3;
             this.gb_connectionSettings.TabStop = false;
             this.gb_connectionSettings.Text = "Connection status";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(167, 119);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Firmware version";
             // 
             // pb_device
             // 
@@ -1838,19 +1847,19 @@ namespace ChameleonMiniGUI
             this.toolStripMenuItem1,
             this.toolStripMenuItem2});
             this.menuScroll.Name = "menuScroll";
-            this.menuScroll.Size = new System.Drawing.Size(172, 48);
+            this.menuScroll.Size = new System.Drawing.Size(171, 48);
             this.menuScroll.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuScroll_ItemClicked);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(171, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
             this.toolStripMenuItem1.Text = "Toggle Sync Scroll";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(171, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(170, 22);
             this.toolStripMenuItem2.Text = "Close Files";
             // 
             // btn_close2
@@ -2059,6 +2068,24 @@ namespace ChameleonMiniGUI
             this.hexBox1.ToggleSyncScrollPressed += new System.EventHandler(this.toggleSyncScrollPressed);
             this.hexBox1.MouseEnter += new System.EventHandler(this.hexBox_MouseEnter);
             // 
+            // tpUtils
+            // 
+            this.tpUtils.Controls.Add(this.ucExplorer1);
+            this.tpUtils.Location = new System.Drawing.Point(4, 22);
+            this.tpUtils.Name = "tpUtils";
+            this.tpUtils.Padding = new System.Windows.Forms.Padding(3);
+            this.tpUtils.Size = new System.Drawing.Size(1279, 491);
+            this.tpUtils.TabIndex = 6;
+            this.tpUtils.Text = "Utils";
+            this.tpUtils.UseVisualStyleBackColor = true;
+            // 
+            // ucExplorer1
+            // 
+            this.ucExplorer1.Location = new System.Drawing.Point(52, 48);
+            this.ucExplorer1.Name = "ucExplorer1";
+            this.ucExplorer1.Size = new System.Drawing.Size(730, 366);
+            this.ucExplorer1.TabIndex = 0;
+            // 
             // tpSerial
             // 
             this.tpSerial.Controls.Add(this.flowLayoutPanel1);
@@ -2198,36 +2225,9 @@ namespace ChameleonMiniGUI
             this.linkRevE.Text = "Rev E rebooted Wiki";
             this.linkRevE.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkRevE_LinkClicked);
             // 
-            // tpUtils
-            // 
-            this.tpUtils.Controls.Add(this.ucExplorer1);
-            this.tpUtils.Location = new System.Drawing.Point(4, 22);
-            this.tpUtils.Name = "tpUtils";
-            this.tpUtils.Padding = new System.Windows.Forms.Padding(3);
-            this.tpUtils.Size = new System.Drawing.Size(1279, 491);
-            this.tpUtils.TabIndex = 6;
-            this.tpUtils.Text = "Utils";
-            this.tpUtils.UseVisualStyleBackColor = true;
-            // 
-            // ucExplorer1
-            // 
-            this.ucExplorer1.Location = new System.Drawing.Point(52, 48);
-            this.ucExplorer1.Name = "ucExplorer1";
-            this.ucExplorer1.Size = new System.Drawing.Size(730, 366);
-            this.ucExplorer1.TabIndex = 0;
-            // 
             // openFileDialog2
             // 
             this.openFileDialog2.FileName = "openFileDialog2";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(167, 119);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Firmware version";
             // 
             // frm_main
             // 
@@ -2283,6 +2283,7 @@ namespace ChameleonMiniGUI
             this.tpDump.PerformLayout();
             this.menuScroll.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bsTemplates)).EndInit();
+            this.tpUtils.ResumeLayout(false);
             this.tpSerial.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.gbSerial_interface.ResumeLayout(false);
@@ -2290,7 +2291,6 @@ namespace ChameleonMiniGUI
             this.menuClear.ResumeLayout(false);
             this.gbAvailableCmds.ResumeLayout(false);
             this.gbAvailableCmds.PerformLayout();
-            this.tpUtils.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

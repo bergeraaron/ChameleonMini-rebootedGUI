@@ -1,0 +1,124 @@
+﻿#
+# this CSV file defines a color template for a binary file.
+#
+# This file targets:   Mifare Classic s50 , 1k,  4 byte UID
+# 
+# 2018, bergeraaron
+# block 0
+0; 4; DeepPink; Black; UID
+4; 1; DeepSkyBlue; Black; BCC
+5; 16; White; black; Text
+(0*64)+16; 1; Green; Black; CRC
+(0*64)+17; 1; Blue; Black; INFO
+#AID 1-F
+(0*64)+18; 2; SpringGreen; Black; AID1
+(0*64)+20; 2; MediumSeaGreen; Black; AID2
+(0*64)+22; 2; SeaGreen; Black; AID3
+(0*64)+24; 2; DarkSeaGreen; Black; AID4
+(0*64)+26; 2; PaleGreen; Black; AID5
+(0*64)+28; 2; LightGreen; Black; AID6
+(0*64)+30; 2; LimeGreen; Black; AID7
+
+(0*64)+32; 2; SteelBlue; Black; AID8
+(0*64)+34; 2; LightSkyBlue; Black; AID9
+(0*64)+36; 2; SkyBlue; Black; AIDA
+(0*64)+38; 2; DeepSkyBlue; Black; AIDB
+(0*64)+40; 2; LightBlue; Black; AIDC
+(0*64)+42; 2; PowderBlue; Black; AIDD
+(0*64)+44; 2; CadetBlue; Black; AIDE
+(0*64)+46; 2; DarkTurquoise; Black; AIDF
+
+(0*64) + 48; 6; Orange; Black; Key A
+(0*64)+ 48+ 6; 3; Red; Black; Access bytes
+(0*64)+ 48+ 9; 1; Aquamarine; Black; GDC byte
+(0*64) + 48+10; 6; SkyBlue; Black; Key B
+# block 1
+(1*64); 48; Black; SpringGreen; Text
+(1*64) + 48; 6; Orange; SpringGreen; Key A
+(1*64)+ 48+ 6; 3; Red; SpringGreen; Access bytes
+(1*64)+ 48+ 9; 1; Aquamarine; SpringGreen; GDC byte
+(1*64) + 48 +10; 6; SkyBlue; Black; Key B
+# block 2
+(2*64); 48; Black; MediumSeaGreen; Text
+(2*64) + 48; 6; Orange; Black; Key A
+(2*64)+ 48+ 6; 3; Red; Black; Access bytes
+(2*64)+ 48+ 9; 1; Aquamarine; Black; GDC byte
+(2*64) + 48 +10; 6; SkyBlue; Black; Key B
+# block 3
+(3*64); 48; Black; SeaGreen; Text
+(3*64) + 48; 6; Orange; Black; Key A
+(3*64)+ 48+ 6; 3; Red; Black; Access bytes
+(3*64)+ 48+ 9; 1; Aquamarine; Black; GDC byte
+(3*64) + 48 +10; 6; SkyBlue; Black; Key B
+# block 4
+(4*64); 48; Black; DarkSeaGreen; Text
+(4*64) + 48; 6; Orange; Black; Key A
+(4*64)+ 48+ 6; 3; Red; Black; Access bytes
+(4*64)+ 48+ 9; 1; Aquamarine; Black; GDC byte
+(4*64) + 48 +10; 6; SkyBlue; Black; Key B
+# block 5
+(5*64); 48; Black; PaleGreen; Text
+(5*64) + 48; 6; Orange; Black; Key A
+(5*64)+ 48+ 6; 3; Red; Black; Access bytes
+(5*64)+ 48+ 9; 1; Aquamarine; Black; GDC byte
+(5*64) + 48 +10; 6; SkyBlue; Black; Key B
+# block 6
+(6*64); 48; Black; LightGreen; Text
+(6*64) + 48; 6; Orange; Black; Key A
+(6*64)+ 48+ 6; 3; Red; Black; Access bytes
+(6*64)+ 48+ 9; 1; Aquamarine; Black; GDC byte
+(6*64) + 48 +10; 6; SkyBlue; Black; Key B
+# block 7
+(7*64); 48; Black; LimeGreen; Text
+(7*64) + 48; 6; Orange; Black; Key A
+(7*64)+ 48+ 6; 3; Red; Black; Access bytes
+(7*64)+ 48+ 9; 1; Aquamarine; Black; GDC byte
+(7*64) + 48 +10; 6; SkyBlue; Black; Key B
+# block 8
+(8*64); 48; Black; SteelBlue; Text
+(8*64) + 48; 6; Orange; Black; Key A
+(8*64)+ 48+ 6; 3; Red; Black; Access bytes
+(8*64)+ 48+ 9; 1; Aquamarine; Black; GDC byte
+(8*64) + 48 +10; 6; SkyBlue; Black; Key B
+# block 9
+(9*64); 48; Black; LightSkyBlue; Text
+(9*64) + 48; 6; Orange; Black; Key A
+(9*64)+ 48+ 6; 3; Red; Black; Access bytes
+(9*64)+ 48+ 9; 1; Aquamarine; Black; GDC byte
+(9*64) + 48 +10; 6; SkyBlue; Black; Key B
+# block 10
+(10*64); 48; Black; SkyBlue; Text
+(10*64) + 48; 6; Orange; Black; Key A
+(10*64)+ 48+ 6; 3; Red; Black; Access bytes
+(10*64)+ 48+ 9; 1; Aquamarine; Black; GDC byte
+(10*64) + 48 +10; 6; SkyBlue; Black; Key B
+# block 11
+(11*64); 48; Black; DeepSkyBlue; Text
+(11*64) + 48; 6; Orange; Black; Key A
+(11*64)+ 48+ 6; 3; Red; Black; Access bytes
+(11*64)+ 48+ 9; 1; Aquamarine; Black; GDC byte
+(11*64) + 48 +10; 6; SkyBlue; Black; Key B
+# block 12
+(12*64); 48; Black; LightBlue; Text
+(12*64) + 48; 6; Orange; Black; Key A
+(12*64)+ 48+ 6; 3; Red; Black; Access bytes
+(12*64)+ 48+ 9; 1; Aquamarine; Black; GDC byte
+(12*64) + 48 +10; 6; SkyBlue; Black; Key B
+# block 13
+(13*64); 48; Black; PowderBlue; Text
+(13*64) + 48; 6; Orange; Black; Key A
+(13*64)+ 48+ 6; 3; Red; Black; Access bytes
+(13*64)+ 48+ 9; 1; Aquamarine; Black; GDC byte
+(13*64) + 48 +10; 6; SkyBlue; Black; Key B
+# block 14
+(14*64); 48; Black; CadetBlue; Text
+(14*64) + 48; 6; Orange; Black; Key A
+(14*64)+ 48+ 6; 3; Red; Black; Access bytes
+(14*64)+ 48+ 9; 1; Aquamarine; Black; GDC byte
+(14*64) + 48 +10; 6; SkyBlue; Black; Key B
+# block 15
+(15*64); 48; Black; DarkTurquoise; Text
+(15*64) + 48; 6; Orange; Black; Key A
+(15*64)+ 48+ 6; 3; Red; Black; Access bytes
+(15*64)+ 48+ 9; 1; Aquamarine; Black; GDC byte
+(15*64) + 48 +10; 6; SkyBlue; Black; Key B

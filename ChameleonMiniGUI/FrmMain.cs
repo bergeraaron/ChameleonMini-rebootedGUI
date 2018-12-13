@@ -1690,17 +1690,82 @@ namespace ChameleonMiniGUI
             {
                 CleanUpHexBox(hexBox);
 
-
                 // try to open in write mode
                 var dynamicFileByteProvider = new DynamicFileByteProvider(fi.Open(FileMode.Open, FileAccess.ReadWrite));
                 hexBox.ByteProvider = dynamicFileByteProvider;
+
+                string MAD_info = "";
+                if (dynamicFileByteProvider.Length == 1024) //1k?
+                {
+                    int sector_ctr = 0;
+                    int block_ctr = 0;
+                    int ctr = 0;
+                    var card_data = new byte[1024];
+                    var sector0_key_a = new byte[6];
+                    var mad_key = new byte[] { 0xA0, 0xA1, 0xA2, 0xA3, 0xA4, 0xA5 };
+                    for (int d = 0;d< dynamicFileByteProvider.Length;d++)
+                    {
+                        card_data[d] = dynamicFileByteProvider.ReadByte(d);
+                        ctr++;
+                        if (ctr == 16)
+                        {
+                            if (sector_ctr == 0 && block_ctr == 3)//grab key a
+                            {
+                                for (int i = 0; i < 6; i++)
+                                    sector0_key_a[i] = card_data[d-15+i];
+                                if (sector0_key_a.SequenceEqual(mad_key))
+                                {
+                                    MAD_info = "MADv";
+                                    byte gpb = card_data[d - 6];
+                                    if (IsBitSet(gpb, 0))
+                                        MAD_info = "MADv1";
+                                    if (IsBitSet(gpb, 1))
+                                        MAD_info = "MADv2";
+                                }
+                                    
+                                /**
+                                    if (memcmp(sector0_key_a, mad_key, 6) == 0)
+                                    {
+                                        printf("Mifare MAD\n");
+                                        //get the access condition
+                                        for (int i = 6; i < 9; i++)
+                                            access_condition[i] = data[i];
+                                        gpb = data[9];
+                                        printf("gpb:%02X\n", gpb);
+                                        if (CHECK_BIT(gpb, 7) > 0)
+                                            printf("DIR available\n");
+                                        if (CHECK_BIT(gpb, 6) > 0)
+                                            printf("MA: APPL multi\n");
+                                        if (CHECK_BIT(gpb, 0) > 0)
+                                            printf("MAD Version 1\n");
+                                        if (CHECK_BIT(gpb, 1) > 0)
+                                            printf("MAD Version 2\n");
+                                    }
+/**/
+
+                            }
+                            ctr = 0;
+                            block_ctr++;
+                        }
+                        if (block_ctr == 4)
+                        {
+                            block_ctr = 0;
+                            sector_ctr++;
+                        }
+                        if (sector_ctr == 2)
+                            break;
+                    }
+                    //loop through and check if the card supports MAD
+                }
+
+
 
                 // Display info for the file
                 var hbIdx = int.Parse(hexBox.Name.Substring(hexBox.Name.Length - 1));
                 var l = FindControls<Label>(Controls, $"lbl_hbfilename{hbIdx}").FirstOrDefault();
                 if (l != null)
                 {
-                    l.Text = $"{fi.Name} ({fi.Length} bytes)";
+                    l.Text = $"{fi.Name} ({fi.Length} bytes) {MAD_info}";
                 }
 
                 // reset template dropdown.
@@ -1721,6 +1786,11 @@ namespace ChameleonMiniGUI
                 MessageBox.Show(msg);
                 txt_output.Text += msg;
             }
+        }
+
+        bool IsBitSet(byte b, int pos)
+        {
+            return (b & (1 << pos)) != 0;
         }
 
         DialogResult CloseFile(HexBox hexBox)

@@ -78,7 +78,7 @@
     <ManifestKeyFile>ChameleonMiniGUI_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>chameleon.ico</ApplicationIcon>
@@ -170,9 +170,8 @@
     <Content Include="Templates\MIfare-S20-320b.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\MIfare-S50-1k-Black.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Templates\MIfare-S50-1k-Black.txt" />
+    <Content Include="Templates\MIfare-S50-1k-MAD-Black.txt" />
     <Content Include="Templates\MIfare-S50-1k.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -252,6 +251,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Debug\Templates\" />
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
